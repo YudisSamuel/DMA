@@ -1,0 +1,158 @@
+/* Reset dan Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    color: #333;
+    line-height: 1.4;
+    background-color: white;
+    padding: 20px 20px 100px; /* Tambahkan padding bottom untuk ruang footer */
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+.company-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #2c3e50;
+}
+
+.report-title {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 8px 0;
+    text-align: center;
+}
+
+/* Metadata Section */
+.metadata {
+    margin: 15px 0;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.metadata-item {
+    margin-bottom: 8px;
+}
+
+.metadata-item strong {
+    color: #2c3e50;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Analysis Section */
+.analysis-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.analysis-section h2 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* MAPE Indicators */
+.mape-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+}
+
+.mape-indicator.success {
+    background-color: #28a745;
+}
+
+.mape-indicator.warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.mape-indicator.danger {
+    background-color: #dc3545;
+}
+
+/* Lists in Analysis */
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    background-color: white;
+    margin-top: 0;
+}
+
+@media print {
+    body {
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .content-wrapper {
+        margin-bottom: 0;
+    }
+}
+
+.content-wrapper {
+    margin-bottom: 100px; /* Sesuaikan dengan tinggi footer */
+}

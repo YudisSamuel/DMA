@@ -1,0 +1,430 @@
+/* Global Styles */
+
+.content {
+    flex-grow: 1;
+    flex-direction: column;
+    margin-top:  5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+}
+/* area untuk form */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Lebar container diubah menjadi 80% dari layar */
+    max-width: none; /* Menghapus batas maksimum lebar */
+    margin: 30px auto;
+    border: 1px solid #ddd;
+
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 80px;
+    background-color: #4e73df;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    color: white;
+    transition: all 0.3s ease;
+    position: fixed;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.sidebar.expanded {
+    width: 250px !important;
+}
+
+.sidebar-header {
+    padding: 0 20px;
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.logo-text {
+    font-weight: 500;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+}
+
+.sidebar.expanded .logo-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-text {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar.expanded .menu-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bottom-item {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+.main-content.expanded {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+/* Header Styles */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Profile Styles */
+.profile {
+    position: absolute; /* Menggunakan absolute positioning */
+    right: 20px; /* Jarak dari sisi kanan */
+    top: 10px; /* Sesuaikan jarak dari atas sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* untuk dropdown */
+.dropdown-menu {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    top: 50px; /* Atur jarak dari atas ikon */
+    right: 20px; /* Atur jarak dari kanan */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* css form */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.button-group .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+
+/* Filter Styles */
+.filter-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.2);
+}
+
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.styled-table thead tr {
+    background-color: #4e73df;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4e73df;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+/* Style untuk tombol Print */
+.print-button {
+    background-color: #4CAF50; /* Warna dasar hijau */
+    color: white; /* Warna teks putih */
+    padding: 8px 16px; /* Jarak padding */
+    border: none; /* Hapus border default */
+    border-radius: 4px; /* Buat sudut membulat */
+    cursor: pointer; /* Pointer saat hover */
+    font-size: 14px; /* Ukuran font */
+    font-weight: bold; /* Buat teks bold */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animasi */
+}
+
+.print-button:hover {
+    background-color: #45a049; /* Warna saat hover */
+    transform: scale(1.05); /* Sedikit perbesar */
+}
+
+.print-button:active {
+    background-color: #3e8e41; /* Warna saat ditekan */
+    transform: scale(0.95); /* Sedikit kecilkan */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat ditekan */
+}
+
+
+
+.print-multiple-button {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.print-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.table-actions {
+    margin-bottom: 15px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    gap: 10px; /* Memberikan jarak antar elemen */
+}
+
+.filter-select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Style untuk tombol Clear Histories */
+button[type="submit"] {
+    background-color: #f44336; /* Warna merah untuk tombol */
+    color: white; /* Warna teks putih */
+    border: none; /* Menghilangkan border default */
+    padding: 10px 20px; /* Padding untuk ruang di dalam tombol */
+    font-size: 16px; /* Ukuran font */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    cursor: pointer; /* Menambahkan kursor pointer */
+    transition: background-color 0.3s ease; /* Animasi transisi pada hover */
+}
+
+button[type="submit"]:hover {
+    background-color: #d32f2f; /* Warna tombol ketika hover */
+}
+
+button[type="submit"]:focus {
+    outline: none; /* Menghilangkan outline ketika tombol difokuskan */
+}
+
+/* Style untuk tombol Pulihkan Data */
+button.btn-primary {
+    background-color: #4CAF50; /* Warna hijau untuk tombol */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #388e3c; /* Warna hijau ketika hover */
+}
+
+button.btn-primary:focus {
+    outline: none;
+}
+
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
